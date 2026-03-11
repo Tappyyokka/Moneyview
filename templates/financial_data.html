@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="finance-form-container">
+
+<h2>Financial Information</h2>
+<p>Please provide your financial details to start tracking your finances.</p>
+
+<form method="POST" action="/financial-data">
+
+<h3>Income Details</h3>
+
+<label>Annual Income</label>
+<input type="number" name="annual_income" required>
+
+<label>Monthly Salary</label>
+<input type="number" name="monthly_income">
+
+<label>Other Income Sources</label>
+<input type="number" name="other_income">
+
+
+<h3>Loan & Debt Information</h3>
+
+<label>Total Loans</label>
+<input type="number" name="loans">
+
+<label>Credit Card Debt</label>
+<input type="number" name="credit_debt">
+
+<label>Other Debts</label>
+<input type="number" name="other_debt">
+
+
+<h3>Assets</h3>
+
+<label>Savings</label>
+<input type="number" name="savings">
+
+<label>Investments / Stocks</label>
+<input type="number" name="investments">
+
+<label>Trading Assets / Crypto</label>
+<input type="number" name="trading_assets">
+
+<label>Property Value</label>
+<input type="number" name="property">
+
+
+<h3>Expenses</h3>
+
+<label>Monthly Living Expenses</label>
+<input type="number" name="living_expense">
+
+<label>Other Monthly Expenses</label>
+<input type="number" name="other_expense">
+
+
+<button type="submit">Submit Financial Data</button>
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Financial Wisdom</h1>
+        <p class="text-muted">Master your money with these timeless principles.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                <div class="text-primary mb-3"><i class="bi bi-graph-up-arrow fs-1"></i></div>
+                <h5 class="fw-bold">Compound Interest</h5>
+                <p class="text-muted small">"Compound interest is the eighth wonder of the world. He who understands it, earns it... he who doesn't, pays it."</p>
+                <div class="mt-auto"><span class="badge bg-primary-subtle text-primary rounded-pill">Growth</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                <div class="text-success mb-3"><i class="bi bi-piggy-bank fs-1"></i></div>
+                <h5 class="fw-bold">The 50/30/20 Rule</h5>
+                <p class="text-muted small">Allocate 50% to needs, 30% to wants, and 20% to savings. A simple path to financial freedom.</p>
+                <div class="mt-auto"><span class="badge bg-success-subtle text-success rounded-pill">Budgeting</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                <div class="text-warning mb-3"><i class="bi bi-shield-check fs-1"></i></div>
+                <h5 class="fw-bold">Emergency Funds</h5>
+                <p class="text-muted small">Always keep 3-6 months of expenses in a liquid account. It's not just money; it's peace of mind.</p>
+                <div class="mt-auto"><span class="badge bg-warning-subtle text-warning rounded-pill">Security</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 p-5 rounded-5 bg-primary text-white text-center">
+        <h3 class="fst-italic">"Do not save what is left after spending, but spend what is left after saving."</h3>
+        <p class="mt-3">— Warren Buffett</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card border-0 shadow-sm rounded-4 p-3">
+                <div class="nav flex-column nav-pills" id="settingsTabs" role="tablist">
+                    <button class="nav-link active text-start mb-2" data-bs-toggle="pill" data-bs-target="#profile" type="button">
+                        <i class="bi bi-person-circle me-2"></i> Profile
+                    </button>
+                    <button class="nav-link text-start mb-2" data-bs-toggle="pill" data-bs-target="#security" type="button">
+                        <i class="bi bi-shield-lock me-2"></i> Security
+                    </button>
+                    <button class="nav-link text-start mb-2" data-bs-toggle="pill" data-bs-target="#preferences" type="button">
+                        <i class="bi bi-translate me-2"></i> Language
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane fade show active" id="profile">
+                        <h4 class="fw-bold mb-4">Profile Settings</h4>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted">Full Name</label>
+                            <input type="text" class="form-control form-control-lg bg-light border-0" value="{{ user_name }}">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Email Address</label>
+                            <input type="email" class="form-control form-control-lg bg-light border-0" placeholder="your@email.com">
+                        </div>
+                        <button class="btn btn-primary rounded-pill px-4">Update Profile</button>
+                    </div>
+
+                    <div class="tab-pane fade" id="security">
+                        <h4 class="fw-bold mb-4">Security</h4>
+                        <p class="text-muted">Manage your password and account protection.</p>
+                        <button class="btn btn-outline-danger btn-sm rounded-pill">Change Password</button>
+                    </div>
+
+                    <div class="tab-pane fade" id="preferences">
+                        <h4 class="fw-bold mb-4">Language</h4>
+                        <select class="form-select border-0 bg-light py-2">
+                            <option selected>English</option>
+                            <option>Malayalam</option>
+                            <option>Hindi</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

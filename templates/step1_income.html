@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+        <div class="progress mb-4" style="height: 10px; border-radius: 5px;">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="card shadow-sm border-0 p-4" style="border-radius: 15px;">
+            <div class="card-body">
+                <h2 class="fw-bold text-dark mb-1">Step 1: Income</h2>
+                <p class="text-muted mb-4">Let's start with your monthly earnings.</p>
+
+                <form action="{{ url_for('onboarding', step_num=1) }}" method="POST">
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Primary monthly income (Salary/Business)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">$</span>
+                            <input type="number" name="monthly_income" class="form-control border-start-0" placeholder="0.00" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block fw-semibold">Do you have additional income sources?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="has_extra" id="extraYes" onclick="toggleField('extra_income_div', true)">
+                            <label class="form-check-label" for="extraYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="has_extra" id="extraNo" onclick="toggleField('extra_income_div', false)" checked>
+                            <label class="form-check-label" for="extraNo">No</label>
+                        </div>
+                    </div>
+
+                    <div id="extra_income_div" class="mb-4" style="display:none;">
+                        <label class="form-label text-muted small">Monthly extra amount</label>
+                        <input type="number" name="additional_income" class="form-control" placeholder="Enter amount" value="0">
+                    </div>
+
+                    <hr class="my-4 text-muted">
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Total annual income</label>
+                        <input type="number" name="annual_income" class="form-control" placeholder="Yearly total" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block fw-semibold">Do you receive bonuses or irregular income?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="has_bonus" id="bonusYes" onclick="toggleField('bonus_div', true)">
+                            <label class="form-check-label" for="bonusYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="has_bonus" id="bonusNo" onclick="toggleField('bonus_div', false)" checked>
+                            <label class="form-check-label" for="bonusNo">No</label>
+                        </div>
+                    </div>
+
+                    <div id="bonus_div" class="mb-4" style="display:none;">
+                        <label class="form-label text-muted small">Approximate yearly amount</label>
+                        <input type="number" name="bonus_income" class="form-control" placeholder="Yearly bonus" value="0">
+                    </div>
+
+                    <div class="d-grid mt-5">
+                        <button type="submit" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm" style="border-radius: 10px;">
+                            Next: Expenses &rarr;
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="text-center mt-3 text-muted small">Step 1 of 5</p>
+    </div>
+</div>
+
+<script>
+    function toggleField(id, show) {
+        const div = document.getElementById(id);
+        const input = div.querySelector('input');
+        if (show) {
+            div.style.display = "block";
+            input.focus();
+        } else {
+            div.style.display = "none";
+            input.value = 0; // Reset value if user changes mind
+        }
+    }
+</script>
+{% endblock %}

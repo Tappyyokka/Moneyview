@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="pro-card shadow-lg p-5" style="max-width: 650px; width: 100%; border-radius: 24px;">
+        <div class="progress mb-4" style="height: 8px;">
+            <div class="progress-bar bg-primary" style="width: 40%;"></div>
+        </div>
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Step 2: Monthly Expenses</h2>
+            <p class="text-muted">Where does your money go?</p>
+        </div>
+        <form method="POST">
+            <div class="row g-3">
+                <div class="col-md-6"><label class="form-label fw-bold">Housing</label><input type="number" name="housing" class="form-control bg-light" placeholder="Rent/Mortgage" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Food</label><input type="number" name="food" class="form-control bg-light" placeholder="Groceries/Dining" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Transport</label><input type="number" name="transportation" class="form-control bg-light" placeholder="Fuel/Bus" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Utilities</label><input type="number" name="utilities" class="form-control bg-light" placeholder="Electricity/Water" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Entertainment</label><input type="number" name="entertainment" class="form-control bg-light" placeholder="Netflix/Outings" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Other</label><input type="number" name="other_expenses" class="form-control bg-light" placeholder="Miscellaneous" required></div>
+            </div>
+            <div class="mt-4 d-flex justify-content-between">
+                <a href="javascript:history.back()" class="btn btn-light rounded-pill px-4">Back</a>
+                <button type="submit" class="btn btn-primary rounded-pill px-5 fw-bold">Next <i class="bi bi-arrow-right"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

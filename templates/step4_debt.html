@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="pro-card shadow-lg p-5" style="max-width: 650px; width: 100%; border-radius: 24px;">
+        <div class="progress mb-4" style="height: 8px;">
+            <div class="progress-bar bg-primary" style="width: 80%;"></div>
+        </div>
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-danger">Step 4: Debts & Liabilities</h2>
+            <p class="text-muted">Let's be honest about what you owe.</p>
+        </div>
+        <form method="POST">
+            <div class="row g-3">
+                <div class="col-md-6"><label class="form-label fw-bold">Total Loan Amount</label><input type="number" name="total_loan" class="form-control bg-light" placeholder="Total principal" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Monthly EMI</label><input type="number" name="monthly_emi" class="form-control bg-light" placeholder="Monthly payment" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Credit Card Debt</label><input type="number" name="cc_debt" class="form-control bg-light" placeholder="Outstanding balance" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold">Other Liabilities</label><input type="number" name="other_liabilities" class="form-control bg-light" placeholder="Personal loans etc" required></div>
+            </div>
+            <div class="mt-4 d-flex justify-content-between">
+                <a href="javascript:history.back()" class="btn btn-light rounded-pill px-4">Back</a>
+                <button type="submit" class="btn btn-primary rounded-pill px-5 fw-bold">Next <i class="bi bi-arrow-right"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
